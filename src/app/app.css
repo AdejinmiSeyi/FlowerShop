@@ -1,0 +1,20 @@
+.app-container {
+  min-height: 100vh;
+  background: #f1ecec;
+}
+
+.no-product{
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.no-product h2 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.no-product p {
+  color: #666;
+  font-size: 1.1rem;
+}
