@@ -1,19 +1,22 @@
 <nav class="navbar">
     <div class="navbar-content">
         <div class="logo">
-            <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="logo">
-            <h1>Shop</h1>
+
+            <h1>The Flower Shop</h1>
         </div>
 
-        <app-searchinput (emitSearchedText)="onEmitToApp($event)" />
 
 
 
-        <div class="cart">
-            <div class="cart-icon">🛒 </div>
-            @if (cartCount !== 0) {
-            <span id="cartCount" class="badge">{{cartCount}}</span>
-            }
+        <app-searchinput (textEmitter)="receiVER($event)" />
+
+
+
+        <div class=" cart">
+            <div class="cart-icon">🛍️ </div>
+
+            <span id="cartCount" class="badge"> {{cartCount}} </span>
+
 
         </div>
     </div>

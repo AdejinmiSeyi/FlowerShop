@@ -9,10 +9,10 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './searchinput.css',
 })
 export class Searchinput {
-  searchedText = '';
-  @Output() emitSearchedText = new EventEmitter();
+  searchedText: string = '';
+  @Output() textEmitter = new EventEmitter<string>();
 
-  onSearchBegins() {
-    this.emitSearchedText.emit(this.searchedText);
+  valueChanged() {
+    this.textEmitter.emit(this.searchedText);
   }
 }

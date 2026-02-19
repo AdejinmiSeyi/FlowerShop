@@ -1,14 +1,11 @@
 <div>
-    <app-navbar [cartCount]="cartarray.length" (emitToApp)="onFilterSearch($event)" />
 
-    <app-productcard (addcart)="onRootAddToCartMethod($event)" [filtered]="filteredArray"
-        [selectedProductId]="selectedProductId" (emitProductId)="onSelectedCard($event)" />
+    <app-navbar [cartCount]="cartArray.size" (secondTextEmitter)="receiVER2($event)" />
 
-    <div class="no-product">
-        @if ( filteredArray.length === 0) {
-        <h2>NO Product Found!</h2>
-        <p>Search for something else</p>
-        }
-    </div>
+    <app-productcard [isInCart]="inCart" [selectedId]="selectedProductId" (IdEmitter)="receiveId($event)"
+        (emitProduct)="recievedProduct($event)" [recievedFromParent]="filteredArray" />
+
+    <router-outlet></router-outlet>
+
 
 </div>

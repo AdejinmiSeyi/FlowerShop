@@ -1,21 +1,27 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
-import { type Product } from '../app';
+import { Product } from '../app';
+import { FormsModule } from '@angular/forms';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-productcard',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, CurrencyPipe],
   templateUrl: './productcard.html',
   styleUrl: './productcard.css',
 })
 export class Productcard {
-  @Input() filtered!: Product[];
-  @Input() selectedProductId!: number | null;
-  @Output() addcart = new EventEmitter<Product>();
-  @Output() emitProductId = new EventEmitter<number>();
+  @Input() recievedFromParent!: Product[];
+  @Input() isInCart!: (product: Product) => boolean;
+  @Input() selectedId!: number | null;
+  @Output() emitProduct = new EventEmitter<Product>();
+  @Output() IdEmitter = new EventEmitter<number>();
 
-  onEmitProductId(product: Product) {
-    this.emitProductId.emit(product.id);
+  onClickCard(clickedProduct: Product) {
+    this.emitProduct.emit(clickedProduct);
+  }
+
+  emitId(productId: number) {
+    this.IdEmitter.emit(productId);
   }
 }

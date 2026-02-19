@@ -1,7 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { Searchinput } from '../searchinput/searchinput';
-import { Text } from '@angular/compiler';
-
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -10,10 +8,10 @@ import { Text } from '@angular/compiler';
   styleUrl: './navbar.css',
 })
 export class Navbar {
-  @Input() cartCount = 0;
-  @Output() emitToApp = new EventEmitter<string>();
+  @Input() cartCount!: number;
+  @Output() secondTextEmitter = new EventEmitter<string>();
 
-  onEmitToApp(searchedString: string) {
-    this.emitToApp.emit(searchedString);
+  receiVER(eventt: string) {
+    this.secondTextEmitter.emit(eventt);
   }
 }
