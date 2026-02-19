@@ -96,7 +96,7 @@ export class App {
       'Fresh white and yellow daisies arranged in a cheerful bouquet to brighten any room.',
     price: 28,
     imageUrl:
-      'https://images.unsplash.com/photo-1504198458649-3128b932f49b?w=400&auto=format&fit=crop', // daisy bouquet
+      'https://images.unsplash.com/photo-1553520929-df493916da94?q=80&w=1025&auto=format&fit=crop', // daisy bouquet
   },
   {
     id: 9,
